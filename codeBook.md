@@ -40,4 +40,4 @@
 - writing the requiered file to the working directory
 write.table(tidyDataSetAverages, "tidyDataSet.txt", row.names = FALSE, sep = ",")
 
-Thank you!
+###Thank you!
