@@ -1,9 +1,9 @@
-CodeBook for Getting and Cleaning Data Course Project
+## CodeBook for Getting and Cleaning Data Course Project
 
 
-trainData <- reading data from X_train.txt
-trainLabels <- reading from y_train.txt
-trainSubject <- read from subject_train.txt
+- trainData <- reading data from X_train.txt
+- trainLabels <- reading from y_train.txt
+- trainSubject <- read from subject_train.txt
 
 testData <- reading from test.txt
 testLabels <- reading from y_test.txt  
@@ -21,7 +21,7 @@ activityLabels <- reading from activity_labels.txt
 
 mergedAllExtracted$label <- activityLabels[mergedAllExtracted$label, 2] ##adding the labels to activity column
 
-###looking for various patters and replacing them in the variable names to make them easier to read
+looking for various patters and replacing them in the variable names to make them easier to read
 
 descriptiveName  <- contains the list of variable names to be transformed and injected back into the dataset
 
@@ -35,9 +35,9 @@ pattern="-?mean[(][)]-?",replacement="Mean"
 
 
 tidyDataSetAverages <- copy of mergedAllExtracted dataset
-## finding the mean for each group (.SD) organised by (and excluding ) label and subject
+finding the mean for each group (.SD) organised by (and excluding ) label and subject
 tidyDataSetAverages <- tidyDataSetAverages[,lapply(.SD,mean), by = "label,subject"] 
 
-## writing the requiered file to the working directory
+writing the requiered file to the working directory
 write.table(tidyDataSetAverages, "tidyDataSet.txt", row.names = FALSE, sep = ",")
 
